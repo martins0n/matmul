@@ -1,0 +1,1176 @@
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/iter/adapters/zip.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/iter/traits/iterator.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/alloc/src/alloc.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/alloc/src/raw_vec.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/num/int_macros.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/slice/iter/macros.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/result.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/intrinsics.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/slice/mod.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/num/uint_macros.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/ptr/mod.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/iter/adapters/filter.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/ptr/const_ptr.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/slice/iter.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/ptr/mut_ptr.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/alloc/layout.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/alloc/src/vec/mod.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/cmp.rs does not exist!
+file /rustc/a178d0322ce20e33eac124758e837cbd80a6f633/library/core/src/option.rs does not exist!
+ pub fn loop_interchange_iterators(
+ push    rbp
+ push    r15
+ push    r14
+ push    r13
+ push    r12
+ push    rbx
+ sub     rsp, 216
+ mov     rbx, rdx
+     if d == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:677)
+     cmp     qword, ptr, [rdi, +, 32], 0
+     je      .LBB130_6
+     cmp     qword, ptr, [rdi, +, 40], 0
+     je      .LBB130_6
+     for (&dim, &s) in izip!(dim.slice().iter().rev(), strides.slice().iter().rev()) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:684)
+     mov     rax, qword, ptr, [rdi, +, 40]
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     rax, 1
+     je      .LBB130_4
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     cmp     qword, ptr, [rdi, +, 56], 1
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     jne     .LBB130_147
+.LBB130_4:
+     for (&dim, &s) in izip!(dim.slice().iter().rev(), strides.slice().iter().rev()) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:684)
+     mov     r9, qword, ptr, [rdi, +, 32]
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     r9, 1
+     jne     .LBB130_7
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     r9d, 1
+     jmp     .LBB130_8
+.LBB130_6:
+     mov     r9, qword, ptr, [rdi, +, 32]
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     rax, qword, ptr, [rdi, +, 40]
+     jmp     .LBB130_8
+.LBB130_7:
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     cmp     qword, ptr, [rdi, +, 48], rax
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     jne     .LBB130_147
+.LBB130_8:
+     unsafe { Some(slice::from_raw_parts(self.ptr.as_ptr(), self.len())) } (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/impl_methods.rs:1593)
+     mov     rdx, qword, ptr, [rdi, +, 24]
+     mov     qword, ptr, [rsp, +, 8], rdx
+     if d == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:677)
+     cmp     qword, ptr, [rsi, +, 32], 0
+     je      .LBB130_14
+     cmp     qword, ptr, [rsi, +, 40], 0
+     je      .LBB130_14
+     for (&dim, &s) in izip!(dim.slice().iter().rev(), strides.slice().iter().rev()) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:684)
+     mov     r11, qword, ptr, [rsi, +, 40]
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     r11, 1
+     je      .LBB130_12
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     cmp     qword, ptr, [rsi, +, 56], 1
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     jne     .LBB130_148
+.LBB130_12:
+     for (&dim, &s) in izip!(dim.slice().iter().rev(), strides.slice().iter().rev()) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:684)
+     mov     r10, qword, ptr, [rsi, +, 32]
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     r10, 1
+     jne     .LBB130_15
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     r10d, 1
+     jmp     .LBB130_16
+.LBB130_14:
+     mov     r10, qword, ptr, [rsi, +, 32]
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     r11, qword, ptr, [rsi, +, 40]
+     jmp     .LBB130_16
+.LBB130_15:
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     cmp     qword, ptr, [rsi, +, 48], r11
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     jne     .LBB130_148
+.LBB130_16:
+     unsafe { Some(slice::from_raw_parts(self.ptr.as_ptr(), self.len())) } (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/impl_methods.rs:1593)
+     mov     rsi, qword, ptr, [rsi, +, 24]
+     if d == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:677)
+     cmp     qword, ptr, [rbx, +, 32], 0
+     je      .LBB130_22
+     cmp     qword, ptr, [rbx, +, 40], 0
+     je      .LBB130_22
+     for (&dim, &s) in izip!(dim.slice().iter().rev(), strides.slice().iter().rev()) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:684)
+     mov     rdx, qword, ptr, [rbx, +, 40]
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     rdx, 1
+     je      .LBB130_20
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     cmp     qword, ptr, [rbx, +, 56], 1
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     jne     .LBB130_149
+.LBB130_20:
+     for (&dim, &s) in izip!(dim.slice().iter().rev(), strides.slice().iter().rev()) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:684)
+     mov     rdi, qword, ptr, [rbx, +, 32]
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     rdi, 1
+     jne     .LBB130_23
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     edi, 1
+     jmp     .LBB130_24
+.LBB130_22:
+     mov     rdi, qword, ptr, [rbx, +, 32]
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     rdx, qword, ptr, [rbx, +, 40]
+     jmp     .LBB130_24
+.LBB130_23:
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     cmp     qword, ptr, [rbx, +, 48], rdx
+     if s != contig_stride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:687)
+     jne     .LBB130_149
+.LBB130_24:
+     mov     qword, ptr, [rsp, +, 32], rsi
+     mov     rsi, qword, ptr, [rsp, +, 272]
+     unsafe { Some(slice::from_raw_parts_mut(self.ptr.as_ptr(), self.len())) } (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/impl_methods.rs:1607)
+     mov     r12, qword, ptr, [rbx, +, 24]
+     mov     qword, ptr, [rsp, +, 104], rsi
+     test    rsi, rsi
+     je      .LBB130_141
+     mov     qword, ptr, [rsp, +, 104], r8
+     test    r8, r8
+     je      .LBB130_142
+ imul    r9, rax
+ imul    rdi, rdx
+     mov     rax, rdi
+     mov     rsi, qword, ptr, [rsp, +, 272]
+     or      rax, rsi
+     shr     rax, 32
+     je      .LBB130_28
+     mov     rax, rdi
+     xor     edx, edx
+     div     rsi
+     mov     rsi, rax
+     jmp     .LBB130_29
+.LBB130_28:
+     mov     eax, edi
+     xor     edx, edx
+     div     esi
+     mov     esi, eax
+.LBB130_29:
+     mov     qword, ptr, [rsp, +, 144], rcx
+     mov     rax, r9
+     or      rax, r8
+     shr     rax, 32
+     mov     qword, ptr, [rsp, +, 64], rbx
+     mov     qword, ptr, [rsp, +, 200], rdi
+     je      .LBB130_31
+     mov     rax, r9
+     xor     edx, edx
+     div     r8
+     jmp     .LBB130_32
+.LBB130_31:
+     mov     eax, r9d
+     xor     edx, edx
+     div     r8d
+.LBB130_32:
+     mov     rcx, qword, ptr, [rsp, +, 272]
+     cmp     rsi, rax
+     cmova   rsi, rax
+     mov     qword, ptr, [rsp, +, 96], rsi
+     test    rsi, rsi
+     je      .LBB130_52
+     imul    r10, r11
+     mov     rax, r10
+     or      rax, rcx
+     shr     rax, 32
+     je      .LBB130_35
+     mov     rax, r10
+     xor     edx, edx
+     div     rcx
+     mov     rdx, rax
+     cmp     rdx, r8
+     cmovae  rdx, r8
+     test    rdx, rdx
+     jne     .LBB130_36
+     jmp     .LBB130_52
+.LBB130_35:
+     mov     eax, r10d
+     xor     edx, edx
+     div     ecx
+     mov     edx, eax
+     cmp     rdx, r8
+     cmovae  rdx, r8
+     test    rdx, rdx
+     je      .LBB130_52
+.LBB130_36:
+     mov     rbx, rcx
+     and     rbx, -16
+     mov     rax, rcx
+     neg     rax
+     mov     qword, ptr, [rsp, +, 24], rax
+     lea     rsi, [r12, +, 96]
+     lea     rdi, [8*rcx]
+     mov     r9, qword, ptr, [rsp, +, 32]
+     lea     rax, [r9, +, 96]
+     mov     qword, ptr, [rsp, +, 88], rax
+     lea     rax, [r9, +, 8]
+     mov     qword, ptr, [rsp, +, 80], rax
+     xor     ebp, ebp
+     mov     r13, r12
+     mov     qword, ptr, [rsp, +, 208], r12
+     mov     qword, ptr, [rsp, +, 72], r8
+     jmp     .LBB130_38
+.LBB130_37:
+     add     rsi, rdi
+     add     r13, rdi
+     mov     rbp, qword, ptr, [rsp, +, 56]
+     cmp     rbp, qword, ptr, [rsp, +, 96]
+     mov     r12, qword, ptr, [rsp, +, 208]
+     mov     r8, qword, ptr, [rsp, +, 72]
+     je      .LBB130_52
+.LBB130_38:
+     mov     rax, rbp
+     imul    rax, rcx
+     lea     r9, [r12, +, 8*rax]
+     add     rax, rcx
+     lea     rax, [r12, +, 8*rax]
+     mov     qword, ptr, [rsp, +, 40], rax
+     mov     r10, rbp
+     imul    r10, r8
+     add     rbp, 1
+     mov     qword, ptr, [rsp, +, 56], rbp
+     mov     rax, qword, ptr, [rsp, +, 8]
+     mov     qword, ptr, [rsp, +, 48], r10
+     lea     rax, [rax, +, 8*r10]
+     mov     qword, ptr, [rsp, +, 16], rax
+     mov     r15, qword, ptr, [rsp, +, 80]
+     mov     r8, qword, ptr, [rsp, +, 88]
+     xor     r14d, r14d
+     jmp     .LBB130_40
+.LBB130_39:
+     add     r14, 1
+     add     r8, rdi
+     add     r15, rdi
+     mov     rdx, r10
+     cmp     r14, r10
+     je      .LBB130_37
+.LBB130_40:
+     mov     r10, rdx
+     mov     rdx, r14
+     imul    rdx, rcx
+     mov     rax, qword, ptr, [rsp, +, 16]
+     lea     r12, [rax, +, 8*r14]
+     mov     rbp, qword, ptr, [rsp, +, 32]
+     lea     r11, [8*rdx]
+     add     r11, rbp
+     cmp     rcx, 16
+     jae     .LBB130_46
+     xor     edx, edx
+.LBB130_42:
+     mov     rbp, rdx
+     test    cl, 1
+     je      .LBB130_44
+     mov     rbp, rdx
+ *cij += (*aik) * (*bkj);
+ vmovsd  xmm0, qword, ptr, [r12]
+ vmulsd  xmm0, xmm0, qword, ptr, [r11, +, 8*rdx]
+     or      rbp, 1
+ *cij += (*aik) * (*bkj);
+ vaddsd  xmm0, xmm0, qword, ptr, [r9, +, 8*rdx]
+ vmovsd  qword, ptr, [r9, +, 8*rdx], xmm0
+.LBB130_44:
+     not     rdx
+     cmp     rdx, qword, ptr, [rsp, +, 24]
+     je      .LBB130_39
+.LBB130_45:
+ *cij += (*aik) * (*bkj);
+ vmovsd  xmm0, qword, ptr, [r12]
+ vmulsd  xmm0, xmm0, qword, ptr, [r15, +, 8*rbp, -, 8]
+ *cij += (*aik) * (*bkj);
+ vaddsd  xmm0, xmm0, qword, ptr, [r13, +, 8*rbp]
+ vmovsd  qword, ptr, [r13, +, 8*rbp], xmm0
+ *cij += (*aik) * (*bkj);
+ vmovsd  xmm0, qword, ptr, [r12]
+ vmulsd  xmm0, xmm0, qword, ptr, [r15, +, 8*rbp]
+ *cij += (*aik) * (*bkj);
+ vaddsd  xmm0, xmm0, qword, ptr, [r13, +, 8*rbp, +, 8]
+ vmovsd  qword, ptr, [r13, +, 8*rbp, +, 8], xmm0
+     lea     rax, [rbp, +, 2]
+     mov     rbp, rax
+     cmp     rcx, rax
+     jne     .LBB130_45
+     jmp     .LBB130_39
+.LBB130_46:
+     add     rdx, rcx
+     mov     rax, qword, ptr, [rsp, +, 48]
+     add     rax, r14
+     mov     rcx, qword, ptr, [rsp, +, 8]
+     lea     rax, [rcx, +, 8*rax]
+     add     rax, 1
+     cmp     rax, r9
+     seta    al
+     lea     rcx, [8*rdx]
+     add     rcx, rbp
+     mov     rbp, qword, ptr, [rsp, +, 40]
+     cmp     r12, rbp
+     setb    dl
+     cmp     r9, rcx
+     setb    cl
+     cmp     r11, rbp
+     setb    bpl
+     test    al, dl
+     jne     .LBB130_51
+     mov     edx, 0
+     and     cl, bpl
+     mov     rcx, qword, ptr, [rsp, +, 272]
+     jne     .LBB130_42
+     vbroadcastsd ymm0, qword, ptr, [r12]
+     xor     edx, edx
+.LBB130_49:
+     vmulpd  ymm1, ymm0, ymmword, ptr, [r8, +, 8*rdx, -, 96]
+     vmulpd  ymm2, ymm0, ymmword, ptr, [r8, +, 8*rdx, -, 64]
+     vmulpd  ymm3, ymm0, ymmword, ptr, [r8, +, 8*rdx, -, 32]
+     vmulpd  ymm4, ymm0, ymmword, ptr, [r8, +, 8*rdx]
+ vaddpd  ymm1, ymm1, ymmword, ptr, [rsi, +, 8*rdx, -, 96]
+ vaddpd  ymm2, ymm2, ymmword, ptr, [rsi, +, 8*rdx, -, 64]
+ vaddpd  ymm3, ymm3, ymmword, ptr, [rsi, +, 8*rdx, -, 32]
+ vaddpd  ymm4, ymm4, ymmword, ptr, [rsi, +, 8*rdx]
+ vmovupd ymmword, ptr, [rsi, +, 8*rdx, -, 96], ymm1
+ vmovupd ymmword, ptr, [rsi, +, 8*rdx, -, 64], ymm2
+ vmovupd ymmword, ptr, [rsi, +, 8*rdx, -, 32], ymm3
+ vmovupd ymmword, ptr, [rsi, +, 8*rdx], ymm4
+     add     rdx, 16
+     cmp     rbx, rdx
+     jne     .LBB130_49
+     mov     rdx, rbx
+     cmp     rbx, rcx
+     je      .LBB130_39
+     jmp     .LBB130_42
+.LBB130_51:
+     xor     edx, edx
+     mov     rcx, qword, ptr, [rsp, +, 272]
+     jmp     .LBB130_42
+.LBB130_52:
+     let dim = shape.dim; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/impl_views/constructors.rs:57)
+     mov     qword, ptr, [rsp, +, 160], rcx
+     mov     r15, qword, ptr, [rsp, +, 144]
+     .filter(|&&d| d != 0) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:91)
+     test    r15, r15
+     mov     rsi, rcx
+     mov     ecx, 1
+     cmovne  rcx, r15
+     let dim = shape.dim; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/impl_views/constructors.rs:57)
+     mov     qword, ptr, [rsp, +, 152], r15
+     mov     rax, rcx
+     mul     rsi
+     mov     dl, 6
+     jo      .LBB130_145
+     .filter(|&&d| d != 0) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:91)
+     test    rsi, rsi
+     cmove   rax, rcx
+     if size_nonzero > ::std::isize::MAX as usize { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:94)
+     test    rax, rax
+     if size_nonzero > ::std::isize::MAX as usize { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:94)
+     js      .LBB130_145
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     rax, rsi
+     imul    rax, r15
+     if len > data_len { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:142)
+     cmp     rax, qword, ptr, [rsp, +, 200]
+     ja      .LBB130_144
+     if m == 0 || n == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:624)
+     xor     edx, edx
+     test    r15, r15
+     setne   dl
+     if m == 0 || n == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:624)
+     mov     rbx, rsi
+     cmove   rbx, r15
+     mov     r8d, 1
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     mov     r13d, 1
+     sub     r13, r15
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     imul    r13, rbx
+     mov     r14, rbx
+     sar     r14, 63
+     and     r13, r14
+     xor     ecx, ecx
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     cmp     r8, r15
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     cmovae  r13, rcx
+     mov     r9, rsi
+     lea     rsi, [r12, +, 8*r13]
+     mov     qword, ptr, [rsp, +, 24], rsi
+     mov     qword, ptr, [rsp, +, 104], rsi
+     mov     qword, ptr, [rsp, +, 112], r15
+     mov     qword, ptr, [rsp, +, 120], r9
+     mov     qword, ptr, [rsp, +, 128], rbx
+     mov     qword, ptr, [rsp, +, 16], rdx
+     mov     qword, ptr, [rsp, +, 136], rdx
+     if strides.equal(&defaults) { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:283)
+     test    cl, cl
+     mov     qword, ptr, [rsp, +, 32], rbx
+     mov     qword, ptr, [rsp, +, 56], r9
+     jne     .LBB130_57
+     mov     rcx, qword, ptr, [rsp, +, 16]
+     cmp     rcx, rcx
+     je      .LBB130_61
+.LBB130_57:
+     mov     rdx, rbx
+     neg     rdx
+     cmovl   rdx, rbx
+     if (get!(self, 0) as Ixs).abs() <= (get!(self, 1) as Ixs).abs() { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:643)
+     xor     esi, esi
+     xor     ecx, ecx
+     cmp     rdx, qword, ptr, [rsp, +, 16]
+     setg    sil
+     setle   cl
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     mov     rdx, qword, ptr, [rsp, +, 8*rsi, +, 112]
+     cmp     rdx, 1
+     je      .LBB130_59
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     mov     rbx, qword, ptr, [rsp, +, 8*rsi, +, 128]
+     mov     rdi, rbx
+     neg     rdi
+     cmovl   rdi, rbx
+     mov     rbx, qword, ptr, [rsp, +, 32]
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     rdi, 1
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     jne     .LBB130_72
+.LBB130_59:
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     qword, ptr, [rsp, +, 8*rcx, +, 112], 1
+     je      .LBB130_61
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     mov     rbx, qword, ptr, [rsp, +, 8*rcx, +, 128]
+     mov     rdi, rbx
+     neg     rdi
+     cmovl   rdi, rbx
+     mov     rbx, qword, ptr, [rsp, +, 32]
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     rdi, rdx
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     jne     .LBB130_72
+.LBB130_61:
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     lea     rax, [r15, -, 1]
+     imul    rax, rbx
+     and     r14, rax
+     xor     r12d, r12d
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     cmp     r15, 1
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     cmova   r12, r14
+     mov     rax, qword, ptr, [rsp, +, 272]
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     imul    rax, r15
+     mov     ecx, 8
+     xor     r13d, r13d
+     mov     r14, rax
+     mul     rcx
+     mov     rbp, rax
+     setno   al
+     jo      .LBB130_146
+     mov     r13b, al
+     shl     r13, 3
+     test    rbp, rbp
+     je      .LBB130_70
+     mov     rdi, rbp
+     mov     rsi, r13
+     vzeroupper
+     call    qword, ptr, [rip, +, __rust_alloc@GOTPCREL]
+     mov     rdi, rax
+     mov     rax, rbp
+     shr     rax, 3
+     test    rdi, rdi
+     cmove   rax, rdi
+     mov     qword, ptr, [rsp, +, 48], rax
+     mov     rax, r14
+     mov     rcx, qword, ptr, [rsp, +, 24]
+     test    rdi, rdi
+     je      .LBB130_71
+.LBB130_64:
+     mov     rdx, rbx
+     shr     rdx, 63
+     mov     qword, ptr, [rsp, +, 40], rdx
+     lea     rsi, [rcx, +, 8*r12]
+     lea     rdx, [8*rax]
+     mov     qword, ptr, [rsp, +, 8], rdi
+     vzeroupper
+     call    qword, ptr, [rip, +, memcpy@GOTPCREL]
+     mov     r13, rbx
+     mov     rbp, qword, ptr, [rsp, +, 16]
+     mov     r12, qword, ptr, [rsp, +, 64]
+.LBB130_65:
+     mov     r9, qword, ptr, [rsp, +, 56]
+.LBB130_66:
+     if self.capacity > 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/data_repr.rs:158)
+     mov     rsi, qword, ptr, [r12, +, 16]
+     test    rsi, rsi
+     if self.capacity > 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/data_repr.rs:158)
+     je      .LBB130_69
+     shl     rsi, 3
+     test    rsi, rsi
+     je      .LBB130_69
+     Vec::from_raw_parts(self.ptr.as_ptr(), len, capacity) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/data_repr.rs:130)
+     mov     rdi, qword, ptr, [r12]
+     mov     edx, 8
+     mov     rbx, r9
+     vzeroupper
+     call    qword, ptr, [rip, +, __rust_dealloc@GOTPCREL]
+     mov     r9, rbx
+.LBB130_69:
+     mov     eax, 1
+     mov     ecx, 1
+     sub     rcx, r15
+     imul    rcx, qword, ptr, [rsp, +, 32]
+     xor     edx, edx
+     cmp     byte, ptr, [rsp, +, 40], 0
+     cmove   rcx, rdx
+     cmp     rax, r15
+     cmovae  rcx, rdx
+     mov     rdx, qword, ptr, [rsp, +, 8]
+     lea     rax, [rdx, +, 8*rcx]
+ *c = ArrayView::from_shape((a_shape.0, b_shape.1), &c_slice)
+ mov     qword, ptr, [r12], rdx
+ mov     qword, ptr, [r12, +, 8], r14
+ mov     rcx, qword, ptr, [rsp, +, 48]
+ mov     qword, ptr, [r12, +, 16], rcx
+ mov     qword, ptr, [r12, +, 24], rax
+ mov     qword, ptr, [r12, +, 32], r15
+ mov     qword, ptr, [r12, +, 40], r9
+ mov     qword, ptr, [r12, +, 48], r13
+ mov     qword, ptr, [r12, +, 56], rbp
+ }
+ add     rsp, 216
+ pop     rbx
+ pop     r12
+ pop     r13
+ pop     r14
+ pop     r15
+ pop     rbp
+ vzeroupper
+ ret
+.LBB130_70:
+ xor     eax, eax
+ mov     qword, ptr, [rsp, +, 48], rax
+ mov     rdi, r13
+ mov     rax, r14
+ mov     rcx, qword, ptr, [rsp, +, 24]
+     test    rdi, rdi
+     jne     .LBB130_64
+.LBB130_71:
+     mov     rdi, rbp
+     mov     rsi, r13
+     vzeroupper
+     call    qword, ptr, [rip, +, _ZN5alloc5alloc18handle_alloc_error17hcd24ea096104b31cE@GOTPCREL]
+     ud2
+.LBB130_72:
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     rdx, 1
+     je      .LBB130_74
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     mov     rsi, qword, ptr, [rsp, +, 8*rsi, +, 128]
+     mov     rdi, rsi
+     neg     rdi
+     cmovl   rdi, rsi
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     rdi, 1
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     jne     .LBB130_85
+.LBB130_74:
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     qword, ptr, [rsp, +, 8*rcx, +, 112], 1
+     je      .LBB130_76
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     mov     rcx, qword, ptr, [rsp, +, 8*rcx, +, 128]
+     mov     rsi, rcx
+     neg     rsi
+     cmovl   rsi, rcx
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     cmp     rsi, rdx
+     if dim_slice[i] != 1 && (strides[i] as isize).abs() as usize != cstride { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:296)
+     jne     .LBB130_85
+.LBB130_76:
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     mov     rax, rbx
+     shr     rax, 63
+     mov     qword, ptr, [rsp, +, 40], rax
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     lea     rax, [r15, -, 1]
+     imul    rax, rbx
+     and     r14, rax
+     xor     eax, eax
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     cmp     r15, 1
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     cmovbe  r14, rax
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     rax, qword, ptr, [rsp, +, 272]
+     imul    rax, r15
+     test    rax, rax
+     je      .LBB130_112
+     mov     rbp, r12
+     mov     qword, ptr, [rsp, +, 48], rax
+     lea     rbx, [8*rax]
+     mov     esi, 8
+     mov     rdi, rbx
+     vzeroupper
+     call    qword, ptr, [rip, +, __rust_alloc@GOTPCREL]
+     test    rax, rax
+     mov     r12, qword, ptr, [rsp, +, 64]
+     je      .LBB130_151
+     mov     rcx, qword, ptr, [rsp, +, 24]
+     lea     r11, [rcx, +, 8*r14]
+     mov     rcx, qword, ptr, [rsp, +, 272]
+     imul    rcx, r15
+     mov     r10, rcx
+     lea     rcx, [8*rcx, -, 8]
+     cmp     rcx, 120
+     mov     qword, ptr, [rsp, +, 8], rax
+     jb      .LBB130_81
+     shr     rcx, 3
+     lea     rdx, [r14, +, r13]
+     lea     rsi, [rdx, +, rcx]
+     lea     rsi, [8*rsi, +, 8]
+     add     rsi, rbp
+     cmp     rax, rsi
+     jae     .LBB130_116
+     lea     rsi, [rax, +, 8*r10]
+     lea     rdi, [8*rdx]
+     add     rdi, rbp
+     cmp     rsi, rdi
+     jbe     .LBB130_116
+.LBB130_81:
+     xor     edx, edx
+     mov     rcx, rax
+.LBB130_82:
+     add     r13, r14
+     add     r13, r10
+     lea     rsi, [8*r13]
+     add     rsi, rbp
+     sub     rsi, r11
+     xor     edi, edi
+.LBB130_83:
+     vmovsd  xmm0, qword, ptr, [r11, +, rdi]
+     vmovsd  qword, ptr, [rcx, +, rdi], xmm0
+     len += 1; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:1495)
+     add     rdx, 1
+     add     rdi, 8
+     cmp     rsi, rdi
+     jne     .LBB130_83
+.LBB130_84:
+     mov     r14, rdx
+     mov     r13, qword, ptr, [rsp, +, 32]
+     mov     rbp, qword, ptr, [rsp, +, 16]
+     jmp     .LBB130_65
+.LBB130_85:
+     mov     rcx, qword, ptr, [rsp, +, 24]
+     Iter::new(self) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/impl_views/conversions.rs:176)
+     mov     qword, ptr, [rsp, +, 152], rcx
+     mov     qword, ptr, [rsp, +, 160], r15
+     mov     qword, ptr, [rsp, +, 168], r9
+     mov     qword, ptr, [rsp, +, 176], rbx
+     mov     rcx, qword, ptr, [rsp, +, 16]
+     mov     qword, ptr, [rsp, +, 184], rcx
+     if d == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:677)
+     test    r15, r15
+     mov     rcx, qword, ptr, [rsp, +, 272]
+     je      .LBB130_92
+     test    r9, r9
+     je      .LBB130_92
+     if dim != 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:685)
+     cmp     rcx, 1
+     je      .LBB130_89
+     cmp     qword, ptr, [rsp, +, 16], 0
+     je      .LBB130_91
+.LBB130_89:
+     cmp     r15, 1
+     je      .LBB130_92
+     cmp     rbx, rcx
+     je      .LBB130_92
+.LBB130_91:
+     if m != 0 && n != 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:665)
+     xor     edx, edx
+     test    r15, r15
+     if m == 0 || n == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:624)
+     cmove   r8, r15
+     if m != 0 && n != 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:665)
+     setne   dl
+     mov     qword, ptr, [rsp, +, 8], rdx
+     if m == 0 || n == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:624)
+     cmove   rcx, r15
+     mov     qword, ptr, [rsp, +, 72], rcx
+     mov     r10b, 1
+     mov     r11, r15
+     jmp     .LBB130_93
+.LBB130_92:
+     get!(self, 0) * get!(self, 1) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:600)
+     mov     rax, rcx
+     imul    rax, r15
+     if m == 0 || n == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:624)
+     test    r15, r15
+     if m == 0 || n == 0 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:624)
+     cmove   r8, r15
+     mov     rdx, qword, ptr, [rsp, +, 24]
+     lea     r11, [rdx, +, 8*rax]
+     cmove   rcx, r15
+     mov     qword, ptr, [rsp, +, 72], rcx
+     xor     r10d, r10d
+.LBB130_93:
+     mov     ecx, 8
+     xor     esi, esi
+     mul     rcx
+     mov     rbx, rax
+     setno   al
+     jo      .LBB130_146
+     mov     qword, ptr, [rsp, +, 88], r8
+     mov     sil, al
+     shl     rsi, 3
+     test    rbx, rbx
+     mov     qword, ptr, [rsp, +, 80], rsi
+     je      .LBB130_113
+     mov     rdi, rbx
+     mov     dword, ptr, [rsp, +, 40], r10d
+     mov     rbp, r12
+     mov     r14, r11
+     vzeroupper
+     call    qword, ptr, [rip, +, __rust_alloc@GOTPCREL]
+     mov     r10d, dword, ptr, [rsp, +, 40]
+     mov     r11, r14
+     mov     rcx, rbx
+     shr     rcx, 3
+     test    rax, rax
+     cmove   rcx, rax
+     mov     r8, qword, ptr, [rsp, +, 24]
+     mov     rdx, qword, ptr, [rsp, +, 8]
+     test    rax, rax
+     je      .LBB130_114
+.LBB130_96:
+     either!(self.inner, iter => iter.fold(init, g)) (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:398)
+     test    r10b, r10b
+     mov     qword, ptr, [rsp, +, 8], rax
+     mov     qword, ptr, [rsp, +, 48], rcx
+     je      .LBB130_109
+     while let Some(mut index) = self.index { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:85)
+     cmp     rdx, 1
+     jne     .LBB130_120
+     mov     r12, qword, ptr, [rsp, +, 16]
+     while i < i_end { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:94)
+     lea     rcx, [8*r12]
+     lea     r10, [rcx, +, 2*rcx]
+     mov     r13, r12
+     shl     r13, 5
+     shl     r12, 4
+     xor     r9d, r9d
+     mov     rbp, qword, ptr, [rsp, +, 8]
+     while let Some(mut index) = self.index { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:85)
+     xor     r14d, r14d
+     xor     eax, eax
+     mov     qword, ptr, [rsp, +, 40], rax
+     mov     rbx, qword, ptr, [rsp, +, 32]
+     mov     qword, ptr, [rsp, +, 96], r11
+     jmp     .LBB130_101
+.LBB130_99:
+     while i < i_end { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:94)
+     add     r9, qword, ptr, [rsp, +, 272]
+     sub     r9, r14
+     mov     r15, qword, ptr, [rsp, +, 144]
+     mov     r11, qword, ptr, [rsp, +, 96]
+.LBB130_100:
+     mov     rsi, qword, ptr, [rsp, +, 40]
+     i += 1; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:585)
+     add     rsi, 1
+     if i >= imax { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:586)
+     cmp     rsi, r11
+     if i >= imax { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/dimension_trait.rs:586)
+     cmovb   rax, rsi
+     mov     edi, 0
+     cmovb   rdx, rdi
+     while let Some(mut index) = self.index { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:85)
+     mov     r14, rdx
+     mov     qword, ptr, [rsp, +, 40], rax
+     mov     rax, rsi
+     mov     edx, 0
+     while let Some(mut index) = self.index { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:85)
+     jae     .LBB130_140
+.LBB130_101:
+     mov     rsi, qword, ptr, [rsp, +, 272]
+     while i < i_end { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:94)
+     mov     rdi, rsi
+     sub     rdi, r14
+     while i < i_end { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:94)
+     je      .LBB130_100
+     mov     r11, qword, ptr, [rsp, +, 40]
+     imul    r11, rbx
+     mov     rbx, r14
+     not     rbx
+     add     rbx, rsi
+     mov     esi, edi
+     and     esi, 3
+     cmp     rbx, 3
+     jae     .LBB130_104
+     xor     r15d, r15d
+     mov     rbx, qword, ptr, [rsp, +, 32]
+     test    rsi, rsi
+     jne     .LBB130_107
+     jmp     .LBB130_99
+.LBB130_104:
+     mov     rbx, r14
+     mov     r15, qword, ptr, [rsp, +, 16]
+     imul    rbx, r15
+     add     rbx, r11
+     and     rdi, -4
+     lea     r8, [r8, +, 8*rbx]
+     mov     rbx, r15
+     xor     r15d, r15d
+.LBB130_105:
+     unsafe { self.inner.fold(init, move |acc, ptr| g(acc, &*ptr)) } (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:225)
+     vmovsd  xmm0, qword, ptr, [r8]
+     vmovsd  qword, ptr, [rbp], xmm0
+     vmovsd  xmm0, qword, ptr, [r8, +, 8*rbx]
+     vmovsd  qword, ptr, [rbp, +, 8], xmm0
+     vmovsd  xmm0, qword, ptr, [r8, +, r12]
+     vmovsd  qword, ptr, [rbp, +, 16], xmm0
+     vmovsd  xmm0, qword, ptr, [r8, +, r10]
+     vmovsd  qword, ptr, [rbp, +, 24], xmm0
+     add     rbp, 32
+     i += 1; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:96)
+     add     r15, 4
+     while i < i_end { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:94)
+     add     r8, r13
+     cmp     rdi, r15
+     jne     .LBB130_105
+     mov     rbx, qword, ptr, [rsp, +, 32]
+     mov     r8, qword, ptr, [rsp, +, 24]
+     test    rsi, rsi
+     je      .LBB130_99
+.LBB130_107:
+     add     r15, r14
+     imul    r15, qword, ptr, [rsp, +, 16]
+     add     r11, r15
+     lea     rdi, [r8, +, 8*r11]
+.LBB130_108:
+     unsafe { self.inner.fold(init, move |acc, ptr| g(acc, &*ptr)) } (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:225)
+     vmovsd  xmm0, qword, ptr, [rdi]
+     vmovsd  qword, ptr, [rbp], xmm0
+     add     rbp, 8
+     while i < i_end { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:94)
+     add     rdi, rcx
+     add     rsi, -1
+     jne     .LBB130_108
+     jmp     .LBB130_99
+.LBB130_109:
+     cmp     r11, r8
+     je      .LBB130_120
+     mov     rcx, r13
+     not     rcx
+     lea     rsi, [r11, +, 8*rcx]
+     sub     rsi, r12
+     cmp     rsi, 120
+     jb      .LBB130_111
+     mov     rcx, rsi
+     shr     rcx, 3
+     lea     rdx, [rcx, +, r13]
+     lea     rdx, [r12, +, 8*rdx]
+     add     rdx, 8
+     cmp     rax, rdx
+     jae     .LBB130_124
+     add     rsi, 8
+     and     rsi, -8
+     add     rsi, rax
+     cmp     rsi, r8
+     jbe     .LBB130_124
+.LBB130_111:
+     xor     r9d, r9d
+.LBB130_138:
+     sub     r11, r8
+     xor     ecx, ecx
+.LBB130_139:
+     vmovsd  xmm0, qword, ptr, [r8, +, rcx]
+     vmovsd  qword, ptr, [rax, +, rcx], xmm0
+     len += 1; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:1495)
+     add     r9, 1
+     add     rcx, 8
+     cmp     r11, rcx
+     jne     .LBB130_139
+     jmp     .LBB130_140
+.LBB130_112:
+     xor     eax, eax
+     mov     qword, ptr, [rsp, +, 48], rax
+     mov     eax, 8
+     mov     qword, ptr, [rsp, +, 8], rax
+     xor     r14d, r14d
+     mov     r13, rbx
+     mov     rbp, qword, ptr, [rsp, +, 16]
+     mov     r12, qword, ptr, [rsp, +, 64]
+     jmp     .LBB130_66
+.LBB130_120:
+     xor     r9d, r9d
+.LBB130_140:
+     mov     r13, qword, ptr, [rsp, +, 72]
+     if s < 0 && d > 1 { (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/dimension/mod.rs:416)
+     mov     rax, r13
+     shr     rax, 63
+     mov     qword, ptr, [rsp, +, 40], rax
+     mov     qword, ptr, [rsp, +, 32], r13
+     mov     r14, r9
+     mov     r12, qword, ptr, [rsp, +, 64]
+     mov     r9, qword, ptr, [rsp, +, 56]
+     mov     rbp, qword, ptr, [rsp, +, 88]
+     jmp     .LBB130_66
+.LBB130_113:
+     xor     ecx, ecx
+     mov     rax, rsi
+     mov     r8, qword, ptr, [rsp, +, 24]
+     mov     rdx, qword, ptr, [rsp, +, 8]
+     test    rax, rax
+     jne     .LBB130_96
+.LBB130_114:
+     mov     rdi, rbx
+     mov     rsi, qword, ptr, [rsp, +, 80]
+     vzeroupper
+     call    qword, ptr, [rip, +, _ZN5alloc5alloc18handle_alloc_error17hcd24ea096104b31cE@GOTPCREL]
+     ud2
+.LBB130_116:
+     add     rcx, 1
+     mov     r8, rcx
+     and     r8, -16
+     lea     rsi, [r8, -, 16]
+     mov     r9, rsi
+     shr     r9, 4
+     add     r9, 1
+     test    rsi, rsi
+     je      .LBB130_128
+     lea     rdx, [8*rdx, +, 224]
+     add     rdx, rbp
+     mov     rsi, r9
+     and     rsi, -2
+     neg     rsi
+     vxorpd  xmm0, xmm0, xmm0
+     vpbroadcastq ymm4, qword, ptr, [rip, +, .LCPI130_1]
+     xor     edi, edi
+     vxorpd  xmm1, xmm1, xmm1
+     vxorpd  xmm2, xmm2, xmm2
+     vxorpd  xmm3, xmm3, xmm3
+     mov     rax, qword, ptr, [rsp, +, 8]
+.LBB130_118:
+     vmovapd ymm6, ymm3
+     vmovapd ymm7, ymm2
+     vmovapd ymm5, ymm1
+     vmovapd ymm8, ymm0
+     vmovups ymm0, ymmword, ptr, [rdx, +, 8*rdi, -, 224]
+     vmovups ymm1, ymmword, ptr, [rdx, +, 8*rdi, -, 192]
+     vmovups ymm2, ymmword, ptr, [rdx, +, 8*rdi, -, 160]
+     vmovups ymm3, ymmword, ptr, [rdx, +, 8*rdi, -, 128]
+     vmovups ymmword, ptr, [rax, +, 8*rdi], ymm0
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 32], ymm1
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 64], ymm2
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 96], ymm3
+     vmovups ymm0, ymmword, ptr, [rdx, +, 8*rdi, -, 96]
+     vmovups ymm1, ymmword, ptr, [rdx, +, 8*rdi, -, 64]
+     vmovups ymm2, ymmword, ptr, [rdx, +, 8*rdi, -, 32]
+     vmovups ymm3, ymmword, ptr, [rdx, +, 8*rdi]
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 128], ymm0
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 160], ymm1
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 192], ymm2
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 224], ymm3
+     len += 1; (/home/marti/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.15.3/src/iterators/mod.rs:1495)
+     vpaddq  ymm0, ymm8, ymm4
+     vpaddq  ymm1, ymm5, ymm4
+     vpaddq  ymm2, ymm7, ymm4
+     vpaddq  ymm3, ymm6, ymm4
+     add     rdi, 32
+     add     rsi, 2
+     jne     .LBB130_118
+     vpbroadcastq ymm9, qword, ptr, [rip, +, .LCPI130_2]
+     vpaddq  ymm4, ymm8, ymm9
+     vpaddq  ymm5, ymm9, ymm5
+     vpaddq  ymm7, ymm9, ymm7
+     vpaddq  ymm6, ymm9, ymm6
+     jmp     .LBB130_129
+.LBB130_124:
+     add     rcx, 1
+     mov     r8, rcx
+     and     r8, -16
+     lea     rdx, [r8, -, 16]
+     mov     rbx, rdx
+     shr     rbx, 4
+     add     rbx, 1
+     test    rdx, rdx
+     je      .LBB130_133
+     lea     rdi, [r12, +, 8*r13]
+     add     rdi, 224
+     mov     rdx, rbx
+     and     rdx, -2
+     neg     rdx
+     vxorpd  xmm0, xmm0, xmm0
+     vpbroadcastq ymm4, qword, ptr, [rip, +, .LCPI130_1]
+     xor     esi, esi
+     vxorpd  xmm1, xmm1, xmm1
+     vxorpd  xmm2, xmm2, xmm2
+     vxorpd  xmm3, xmm3, xmm3
+.LBB130_126:
+     vmovapd ymm6, ymm3
+     vmovapd ymm7, ymm2
+     vmovapd ymm5, ymm1
+     vmovapd ymm8, ymm0
+     vmovups ymm0, ymmword, ptr, [rdi, +, 8*rsi, -, 224]
+     vmovups ymm1, ymmword, ptr, [rdi, +, 8*rsi, -, 192]
+     vmovups ymm2, ymmword, ptr, [rdi, +, 8*rsi, -, 160]
+     vmovups ymm3, ymmword, ptr, [rdi, +, 8*rsi, -, 128]
+     vmovups ymmword, ptr, [rax, +, 8*rsi], ymm0
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 32], ymm1
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 64], ymm2
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 96], ymm3
+     vmovups ymm0, ymmword, ptr, [rdi, +, 8*rsi, -, 96]
+     vmovups ymm1, ymmword, ptr, [rdi, +, 8*rsi, -, 64]
+     vmovups ymm2, ymmword, ptr, [rdi, +, 8*rsi, -, 32]
+     vmovups ymm3, ymmword, ptr, [rdi, +, 8*rsi]
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 128], ymm0
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 160], ymm1
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 192], ymm2
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 224], ymm3
+     vpaddq  ymm0, ymm8, ymm4
+     vpaddq  ymm1, ymm5, ymm4
+     vpaddq  ymm2, ymm7, ymm4
+     vpaddq  ymm3, ymm6, ymm4
+     add     rsi, 32
+     add     rdx, 2
+     jne     .LBB130_126
+     vpbroadcastq ymm9, qword, ptr, [rip, +, .LCPI130_2]
+     vpaddq  ymm4, ymm8, ymm9
+     vpaddq  ymm5, ymm9, ymm5
+     vpaddq  ymm7, ymm9, ymm7
+     vpaddq  ymm6, ymm9, ymm6
+     jmp     .LBB130_134
+.LBB130_128:
+     vpbroadcastq ymm4, qword, ptr, [rip, +, .LCPI130_0]
+     xor     edi, edi
+     vmovdqa ymm5, ymm4
+     vmovdqa ymm7, ymm4
+     vmovdqa ymm6, ymm4
+.LBB130_129:
+     test    r9b, 1
+     mov     rax, qword, ptr, [rsp, +, 8]
+     je      .LBB130_131
+     vmovups ymm0, ymmword, ptr, [r11, +, 8*rdi]
+     vmovups ymm1, ymmword, ptr, [r11, +, 8*rdi, +, 32]
+     vmovups ymm2, ymmword, ptr, [r11, +, 8*rdi, +, 64]
+     vmovups ymm3, ymmword, ptr, [r11, +, 8*rdi, +, 96]
+     vmovups ymmword, ptr, [rax, +, 8*rdi], ymm0
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 32], ymm1
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 64], ymm2
+     vmovups ymmword, ptr, [rax, +, 8*rdi, +, 96], ymm3
+     vmovdqa ymm0, ymm4
+     vmovdqa ymm1, ymm5
+     vmovdqa ymm2, ymm7
+     vmovdqa ymm3, ymm6
+.LBB130_131:
+     vpaddq  ymm1, ymm1, ymm3
+     vpaddq  ymm0, ymm0, ymm2
+     vpaddq  ymm0, ymm0, ymm1
+     vextracti128 xmm1, ymm0, 1
+     vpaddq  xmm0, xmm0, xmm1
+     vpshufd xmm1, xmm0, 238
+     vpaddq  xmm0, xmm0, xmm1
+     vmovq   rdx, xmm0
+     cmp     rcx, r8
+     je      .LBB130_84
+     lea     rcx, [rax, +, 8*r8]
+     lea     r11, [r11, +, 8*r8]
+     jmp     .LBB130_82
+.LBB130_133:
+     vpbroadcastq ymm4, qword, ptr, [rip, +, .LCPI130_0]
+     xor     esi, esi
+     vmovdqa ymm5, ymm4
+     vmovdqa ymm7, ymm4
+     vmovdqa ymm6, ymm4
+.LBB130_134:
+     test    bl, 1
+     je      .LBB130_136
+     mov     rdx, qword, ptr, [rsp, +, 24]
+     vmovups ymm0, ymmword, ptr, [rdx, +, 8*rsi]
+     vmovups ymm1, ymmword, ptr, [rdx, +, 8*rsi, +, 32]
+     vmovups ymm2, ymmword, ptr, [rdx, +, 8*rsi, +, 64]
+     vmovups ymm3, ymmword, ptr, [rdx, +, 8*rsi, +, 96]
+     vmovups ymmword, ptr, [rax, +, 8*rsi], ymm0
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 32], ymm1
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 64], ymm2
+     vmovups ymmword, ptr, [rax, +, 8*rsi, +, 96], ymm3
+     vmovdqa ymm0, ymm4
+     vmovdqa ymm1, ymm5
+     vmovdqa ymm2, ymm7
+     vmovdqa ymm3, ymm6
+.LBB130_136:
+     vpaddq  ymm1, ymm1, ymm3
+     vpaddq  ymm0, ymm0, ymm2
+     vpaddq  ymm0, ymm0, ymm1
+     vextracti128 xmm1, ymm0, 1
+     vpaddq  xmm0, xmm0, xmm1
+     vpshufd xmm1, xmm0, 238
+     vpaddq  xmm0, xmm0, xmm1
+     vmovq   r9, xmm0
+     cmp     rcx, r8
+     je      .LBB130_140
+     mov     rcx, qword, ptr, [rsp, +, 24]
+     lea     rcx, [rcx, +, 8*r8]
+     mov     rax, qword, ptr, [rsp, +, 8]
+     lea     rax, [rax, +, 8*r8]
+     mov     r8, rcx
+     jmp     .LBB130_138
+.LBB130_141:
+     mov     qword, ptr, [rsp, +, 152], 0
+     lea     rdx, [rip, +, .L__unnamed_111]
+     jmp     .LBB130_143
+.LBB130_142:
+     mov     qword, ptr, [rsp, +, 152], 0
+     lea     rdx, [rip, +, .L__unnamed_112]
+.LBB130_143:
+     lea     rdi, [rsp, +, 104]
+     lea     rsi, [rsp, +, 152]
+     call    core::panicking::assert_failed
+     ud2
+.LBB130_144:
+     mov     dl, 4
+.LBB130_145:
+     mov     byte, ptr, [rsp, +, 152], dl
+     lea     rdi, [rip, +, .L__unnamed_36]
+     lea     rcx, [rip, +, .L__unnamed_15]
+     lea     r8, [rip, +, .L__unnamed_113]
+     lea     rdx, [rsp, +, 152]
+     mov     esi, 43
+     vzeroupper
+     call    qword, ptr, [rip, +, _ZN4core6result13unwrap_failed17h6160d2b4bfbb0e87E@GOTPCREL]
+     ud2
+.LBB130_146:
+     vzeroupper
+     call    qword, ptr, [rip, +, _ZN5alloc7raw_vec17capacity_overflow17h295ba4e6b8e71b26E@GOTPCREL]
+     ud2
+.LBB130_147:
+     lea     rdi, [rip, +, .L__unnamed_107]
+     lea     rdx, [rip, +, .L__unnamed_114]
+     jmp     .LBB130_150
+.LBB130_148:
+     lea     rdi, [rip, +, .L__unnamed_107]
+     lea     rdx, [rip, +, .L__unnamed_115]
+     jmp     .LBB130_150
+.LBB130_149:
+     lea     rdi, [rip, +, .L__unnamed_107]
+     lea     rdx, [rip, +, .L__unnamed_116]
+.LBB130_150:
+ mov     esi, 43
+ call    qword, ptr, [rip, +, _ZN4core9panicking5panic17h1a48d878ff3dcd40E@GOTPCREL]
+ ud2
+.LBB130_151:
+     mov     esi, 8
+     mov     rdi, rbx
+     call    qword, ptr, [rip, +, _ZN5alloc5alloc18handle_alloc_error17hcd24ea096104b31cE@GOTPCREL]
+     ud2
