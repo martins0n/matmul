@@ -3,22 +3,22 @@ use ndarray::ArrayView;
 
 /// Matmul using iterators
 /// asm:
-///     .LBB130_49:
-///         *cij += (*aik) * (*bkj);
-///         movupd  xmm1, xmmword, ptr, [r8, +, 8*rdx, -, 16]
-///         movupd  xmm2, xmmword, ptr, [r8, +, 8*rdx]
-///         mulpd   xmm1, xmm0
-///         mulpd   xmm2, xmm0
-///         *cij += (*aik) * (*bkj);
-///         movupd  xmm3, xmmword, ptr, [rsi, +, 8*rdx, -, 16]
-///         addpd   xmm3, xmm1
-///         movupd  xmm1, xmmword, ptr, [rsi, +, 8*rdx]
-///         addpd   xmm1, xmm2
-///         movupd  xmmword, ptr, [rsi, +, 8*rdx, -, 16], xmm3
-///         movupd  xmmword, ptr, [rsi, +, 8*rdx], xmm1
-///         add     rdx, 4
-///         cmp     rbx, rdx
-///         jne     .LBB130_49
+/// .LBB130_49:
+///      vmulpd  ymm1, ymm0, ymmword, ptr, [r8, +, 8*rdx, -, 96]
+///      vmulpd  ymm2, ymm0, ymmword, ptr, [r8, +, 8*rdx, -, 64]
+///      vmulpd  ymm3, ymm0, ymmword, ptr, [r8, +, 8*rdx, -, 32]
+///      vmulpd  ymm4, ymm0, ymmword, ptr, [r8, +, 8*rdx]
+///      vaddpd  ymm1, ymm1, ymmword, ptr, [rsi, +, 8*rdx, -, 96]
+///      vaddpd  ymm2, ymm2, ymmword, ptr, [rsi, +, 8*rdx, -, 64]
+///      vaddpd  ymm3, ymm3, ymmword, ptr, [rsi, +, 8*rdx, -, 32]
+///      vaddpd  ymm4, ymm4, ymmword, ptr, [rsi, +, 8*rdx]
+///      vmovupd ymmword, ptr, [rsi, +, 8*rdx, -, 96], ymm1
+///      vmovupd ymmword, ptr, [rsi, +, 8*rdx, -, 64], ymm2
+///      vmovupd ymmword, ptr, [rsi, +, 8*rdx, -, 32], ymm3
+///      vmovupd ymmword, ptr, [rsi, +, 8*rdx], ymm4
+///      add     rdx, 16
+///      cmp     rbx, rdx
+///      jne     .LBB130_49
 /// [Reference](https://www.reidatcheson.com/matrix%20multiplication/rust/iterators/2021/02/26/gemm-iterators.html)
 pub fn loop_interchange_iterators(
     a: &Array2<f64>,
