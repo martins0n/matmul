@@ -11,14 +11,13 @@ run_python: build_python
 	cd python && poetry run python -m src $(ARGS)
 
 build_rust:
-	cd rust && cargo build --release
+	cd rust && RUSTFLAGS='-C target-feature=+avx2 -C target-cpu=native --emit asm -C llvm-args=-x86-asm-syntax=intel' cargo build --release
 
 run_rust: build_rust
 	cd rust && target/release/matmul $(ARGS)
 
-
 build_rust_nighty:
-	cd rust && RUSTFLAGS='-C target-feature=+avx2 -C target-cpu=native' cargo +nightly build --release
+	cd rust && RUSTFLAGS='--emit asm -C target-feature=+avx2 -C target-cpu=native --emit asm -C llvm-args=-x86-asm-syntax=intel' cargo +nightly build --release
 
 run_rust_nightly:
 	cd rust && target/release/matmul $(ARGS)
