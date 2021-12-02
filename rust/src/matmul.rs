@@ -2,10 +2,12 @@ use ndarray::Array2;
 
 pub mod loop_interchange;
 pub mod loop_interchange_iterators;
+pub mod loop_interchange_uncheck;
 pub mod naive;
 
 use loop_interchange::loop_interchange;
 use loop_interchange_iterators::loop_interchange_iterators;
+use loop_interchange_uncheck::loop_interchange_uncheck;
 use naive::naive;
 
 #[derive(Debug, PartialEq, clap::ArgEnum)]
@@ -13,6 +15,7 @@ pub enum MatmulImpl {
     Naive,
     LoopInterchange,
     LoopInterchangeIterators,
+    LoopInterchangeUncheck,
 }
 
 impl MatmulImpl {
@@ -21,6 +24,7 @@ impl MatmulImpl {
             MatmulImpl::Naive => String::from("naive"),
             MatmulImpl::LoopInterchange => String::from("loop_interchange"),
             MatmulImpl::LoopInterchangeIterators => String::from("loop_interchange_iterators"),
+            MatmulImpl::LoopInterchangeUncheck => String::from("loop_interchange_uncheck"),
         }
     }
 
@@ -31,6 +35,7 @@ impl MatmulImpl {
             MatmulImpl::Naive => naive,
             MatmulImpl::LoopInterchange => loop_interchange,
             MatmulImpl::LoopInterchangeIterators => loop_interchange_iterators,
+            MatmulImpl::LoopInterchangeUncheck => loop_interchange_uncheck,
         }
     }
 }

@@ -1,11 +1,14 @@
+    
 ![png](BENCHMARK_files/BENCHMARK_5_0.png)
+    
 
 
     |              shapes | language   | matmul_impl                      |         min |
     |--------------------:|:-----------|:---------------------------------|------------:|
     |             2_4_4_2 | rust       | naive                            | 4.1e-08     |
     |             2_4_4_2 | rust       | loop_interchange                 | 5.5e-08     |
-    |             2_4_4_2 | rust       | loop_interchange_iterators       | 9.8e-08     |
+    |             2_4_4_2 | rust       | loop_interchange_uncheck         | 9.3e-08     |
+    |             2_4_4_2 | rust       | loop_interchange_iterators       | 9.5e-08     |
     |             2_4_4_2 | python     | naive_numba                      | 1.134e-06   |
     |             2_4_4_2 | python     | loop_interchange_numba           | 1.138e-06   |
     |             2_4_4_2 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 1.648e-06   |
@@ -13,7 +16,8 @@
     |             2_4_4_2 | python     | naive                            | 9.084e-06   |
     |             4_4_4_4 | rust       | naive                            | 9.2e-08     |
     |             4_4_4_4 | rust       | loop_interchange                 | 9.4e-08     |
-    |             4_4_4_4 | rust       | loop_interchange_iterators       | 1.8e-07     |
+    |             4_4_4_4 | rust       | loop_interchange_iterators       | 1.28e-07    |
+    |             4_4_4_4 | rust       | loop_interchange_uncheck         | 1.43e-07    |
     |             4_4_4_4 | python     | loop_interchange_numba           | 1.196e-06   |
     |             4_4_4_4 | python     | naive_numba                      | 1.21e-06    |
     |             4_4_4_4 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 1.67e-06    |
@@ -21,29 +25,33 @@
     |             4_4_4_4 | python     | naive                            | 3.2999e-05  |
     |             4_8_8_4 | rust       | naive                            | 1.36e-07    |
     |             4_8_8_4 | rust       | loop_interchange                 | 1.81e-07    |
-    |             4_8_8_4 | rust       | loop_interchange_iterators       | 2.99e-07    |
+    |             4_8_8_4 | rust       | loop_interchange_iterators       | 1.84e-07    |
+    |             4_8_8_4 | rust       | loop_interchange_uncheck         | 3.16e-07    |
     |             4_8_8_4 | python     | loop_interchange_numba           | 1.3e-06     |
     |             4_8_8_4 | python     | naive_numba                      | 1.313e-06   |
     |             4_8_8_4 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 1.68e-06    |
     |             4_8_8_4 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 1.699e-06   |
     |             4_8_8_4 | python     | naive                            | 6.111e-05   |
     |             8_8_8_8 | rust       | naive                            | 4.36e-07    |
+    |             8_8_8_8 | rust       | loop_interchange_iterators       | 4.71e-07    |
     |             8_8_8_8 | rust       | loop_interchange                 | 5.66e-07    |
-    |             8_8_8_8 | rust       | loop_interchange_iterators       | 6.24e-07    |
+    |             8_8_8_8 | rust       | loop_interchange_uncheck         | 6.38e-07    |
     |             8_8_8_8 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 1.731e-06   |
     |             8_8_8_8 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 1.738e-06   |
     |             8_8_8_8 | python     | naive_numba                      | 1.851e-06   |
     |             8_8_8_8 | python     | loop_interchange_numba           | 2.717e-06   |
     |             8_8_8_8 | python     | naive                            | 0.000251612 |
     |           8_16_16_8 | rust       | naive                            | 8.04e-07    |
-    |           8_16_16_8 | rust       | loop_interchange_iterators       | 8.85e-07    |
+    |           8_16_16_8 | rust       | loop_interchange_iterators       | 9.02e-07    |
     |           8_16_16_8 | rust       | loop_interchange                 | 1.202e-06   |
+    |           8_16_16_8 | rust       | loop_interchange_uncheck         | 1.734e-06   |
     |           8_16_16_8 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 1.868e-06   |
     |           8_16_16_8 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 1.891e-06   |
     |           8_16_16_8 | python     | naive_numba                      | 2.315e-06   |
     |           8_16_16_8 | python     | loop_interchange_numba           | 3.733e-06   |
     |           8_16_16_8 | python     | naive                            | 0.000484225 |
-    |         16_16_16_16 | rust       | loop_interchange_iterators       | 1.6e-06     |
+    |         16_16_16_16 | rust       | loop_interchange_iterators       | 1.663e-06   |
+    |         16_16_16_16 | rust       | loop_interchange_uncheck         | 2.172e-06   |
     |         16_16_16_16 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 2.289e-06   |
     |         16_16_16_16 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 2.311e-06   |
     |         16_16_16_16 | rust       | naive                            | 2.954e-06   |
@@ -52,7 +60,8 @@
     |         16_16_16_16 | python     | loop_interchange_numba           | 6.311e-06   |
     |         16_16_16_16 | python     | naive                            | 0.00202464  |
     |         16_32_32_16 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 2.724e-06   |
-    |         16_32_32_16 | rust       | loop_interchange_iterators       | 3.574e-06   |
+    |         16_32_32_16 | rust       | loop_interchange_uncheck         | 2.857e-06   |
+    |         16_32_32_16 | rust       | loop_interchange_iterators       | 2.947e-06   |
     |         16_32_32_16 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 3.694e-06   |
     |         16_32_32_16 | rust       | naive                            | 6.585e-06   |
     |         16_32_32_16 | rust       | loop_interchange                 | 7.253e-06   |
@@ -61,7 +70,8 @@
     |         16_32_32_16 | python     | naive                            | 0.00397362  |
     |         32_32_32_32 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 5.268e-06   |
     |         32_32_32_32 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 6.39e-06    |
-    |         32_32_32_32 | rust       | loop_interchange_iterators       | 7.915e-06   |
+    |         32_32_32_32 | rust       | loop_interchange_iterators       | 8.79e-06    |
+    |         32_32_32_32 | rust       | loop_interchange_uncheck         | 1.0081e-05  |
     |         32_32_32_32 | rust       | loop_interchange                 | 3.1189e-05  |
     |         32_32_32_32 | rust       | naive                            | 3.1453e-05  |
     |         32_32_32_32 | python     | naive_numba                      | 3.6077e-05  |
@@ -69,7 +79,8 @@
     |         32_32_32_32 | python     | naive                            | 0.0151586   |
     |         32_64_64_32 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 7.993e-06   |
     |         32_64_64_32 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 8.106e-06   |
-    |         32_64_64_32 | rust       | loop_interchange_iterators       | 1.8138e-05  |
+    |         32_64_64_32 | rust       | loop_interchange_iterators       | 1.5195e-05  |
+    |         32_64_64_32 | rust       | loop_interchange_uncheck         | 1.7065e-05  |
     |         32_64_64_32 | rust       | loop_interchange                 | 5.527e-05   |
     |         32_64_64_32 | rust       | naive                            | 5.6308e-05  |
     |         32_64_64_32 | python     | naive_numba                      | 7.433e-05   |
@@ -77,7 +88,8 @@
     |         32_64_64_32 | python     | naive                            | 0.0332958   |
     |         64_64_64_64 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 2.1443e-05  |
     |         64_64_64_64 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 2.4962e-05  |
-    |         64_64_64_64 | rust       | loop_interchange_iterators       | 5.1974e-05  |
+    |         64_64_64_64 | rust       | loop_interchange_uncheck         | 5.7117e-05  |
+    |         64_64_64_64 | rust       | loop_interchange_iterators       | 6.2439e-05  |
     |         64_64_64_64 | rust       | naive                            | 0.000233358 |
     |         64_64_64_64 | rust       | loop_interchange                 | 0.000243321 |
     |         64_64_64_64 | python     | naive_numba                      | 0.000325634 |
@@ -85,7 +97,8 @@
     |         64_64_64_64 | python     | naive                            | 0.142963    |
     |       64_128_128_64 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 2.4557e-05  |
     |       64_128_128_64 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 3.2402e-05  |
-    |       64_128_128_64 | rust       | loop_interchange_iterators       | 0.000117157 |
+    |       64_128_128_64 | rust       | loop_interchange_uncheck         | 0.000114561 |
+    |       64_128_128_64 | rust       | loop_interchange_iterators       | 0.000125233 |
     |       64_128_128_64 | rust       | loop_interchange                 | 0.000433922 |
     |       64_128_128_64 | rust       | naive                            | 0.000527876 |
     |       64_128_128_64 | python     | naive_numba                      | 0.000656887 |
@@ -93,7 +106,8 @@
     |       64_128_128_64 | python     | naive                            | 0.269775    |
     |     128_128_128_128 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 6.9473e-05  |
     |     128_128_128_128 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.00011069  |
-    |     128_128_128_128 | rust       | loop_interchange_iterators       | 0.000355878 |
+    |     128_128_128_128 | rust       | loop_interchange_uncheck         | 0.000403372 |
+    |     128_128_128_128 | rust       | loop_interchange_iterators       | 0.000474695 |
     |     128_128_128_128 | rust       | loop_interchange                 | 0.00198741  |
     |     128_128_128_128 | rust       | naive                            | 0.00211838  |
     |     128_128_128_128 | python     | loop_interchange_numba           | 0.00253365  |
@@ -101,7 +115,8 @@
     |     128_128_128_128 | python     | naive                            | 1.02076     |
     |     128_256_256_128 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 0.000115107 |
     |     128_256_256_128 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.000200865 |
-    |     128_256_256_128 | rust       | loop_interchange_iterators       | 0.000911426 |
+    |     128_256_256_128 | rust       | loop_interchange_uncheck         | 0.000957269 |
+    |     128_256_256_128 | rust       | loop_interchange_iterators       | 0.00100693  |
     |     128_256_256_128 | rust       | loop_interchange                 | 0.00397211  |
     |     128_256_256_128 | rust       | naive                            | 0.0049346   |
     |     128_256_256_128 | python     | loop_interchange_numba           | 0.00500387  |
@@ -109,7 +124,8 @@
     |     128_256_256_128 | python     | naive                            | 1.93112     |
     |     256_256_256_256 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 0.000370298 |
     |     256_256_256_256 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.00074354  |
-    |     256_256_256_256 | rust       | loop_interchange_iterators       | 0.00359232  |
+    |     256_256_256_256 | rust       | loop_interchange_uncheck         | 0.00362797  |
+    |     256_256_256_256 | rust       | loop_interchange_iterators       | 0.00419063  |
     |     256_256_256_256 | rust       | loop_interchange                 | 0.0156426   |
     |     256_256_256_256 | python     | loop_interchange_numba           | 0.0203815   |
     |     256_256_256_256 | rust       | naive                            | 0.0249146   |
@@ -117,28 +133,32 @@
     |     256_256_256_256 | python     | naive                            | 7.73768     |
     |     256_512_512_256 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 0.000755285 |
     |     256_512_512_256 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.00172441  |
-    |     256_512_512_256 | rust       | loop_interchange_iterators       | 0.00734839  |
+    |     256_512_512_256 | rust       | loop_interchange_uncheck         | 0.00688004  |
+    |     256_512_512_256 | rust       | loop_interchange_iterators       | 0.0085206   |
     |     256_512_512_256 | rust       | loop_interchange                 | 0.0316979   |
     |     256_512_512_256 | python     | loop_interchange_numba           | 0.0406425   |
     |     256_512_512_256 | rust       | naive                            | 0.0565698   |
     |     256_512_512_256 | python     | naive_numba                      | 0.0706965   |
     |     512_512_512_512 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 0.00223443  |
     |     512_512_512_512 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.00688939  |
-    |     512_512_512_512 | rust       | loop_interchange_iterators       | 0.0292794   |
+    |     512_512_512_512 | rust       | loop_interchange_uncheck         | 0.0275972   |
+    |     512_512_512_512 | rust       | loop_interchange_iterators       | 0.0337366   |
     |     512_512_512_512 | rust       | loop_interchange                 | 0.124312    |
     |     512_512_512_512 | python     | loop_interchange_numba           | 0.172666    |
     |     512_512_512_512 | rust       | naive                            | 0.205607    |
     |     512_512_512_512 | python     | naive_numba                      | 0.257431    |
     |   512_1024_1024_512 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 0.00423702  |
     |   512_1024_1024_512 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.0142917   |
-    |   512_1024_1024_512 | rust       | loop_interchange_iterators       | 0.0596537   |
+    |   512_1024_1024_512 | rust       | loop_interchange_uncheck         | 0.0764949   |
+    |   512_1024_1024_512 | rust       | loop_interchange_iterators       | 0.0842156   |
     |   512_1024_1024_512 | rust       | loop_interchange                 | 0.256322    |
     |   512_1024_1024_512 | python     | loop_interchange_numba           | 0.318879    |
     |   512_1024_1024_512 | python     | naive_numba                      | 0.700258    |
     |   512_1024_1024_512 | rust       | naive                            | 1.11825     |
     | 1024_1024_1024_1024 | python     | numpy_dot_OPENBLAS_NUM_THREADS=4 | 0.0173084   |
     | 1024_1024_1024_1024 | python     | numpy_dot_OPENBLAS_NUM_THREADS=1 | 0.057143    |
-    | 1024_1024_1024_1024 | rust       | loop_interchange_iterators       | 0.436467    |
+    | 1024_1024_1024_1024 | rust       | loop_interchange_uncheck         | 0.458546    |
+    | 1024_1024_1024_1024 | rust       | loop_interchange_iterators       | 0.463142    |
     | 1024_1024_1024_1024 | rust       | loop_interchange                 | 1.08788     |
     | 1024_1024_1024_1024 | python     | loop_interchange_numba           | 1.2439      |
     | 1024_1024_1024_1024 | rust       | naive                            | 5.13137     |

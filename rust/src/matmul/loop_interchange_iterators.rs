@@ -1,5 +1,6 @@
 use ndarray::Array2;
 use ndarray::ArrayView;
+// use ndarray::Axis;
 
 /// Matmul using iterators
 /// asm:
@@ -20,6 +21,8 @@ use ndarray::ArrayView;
 ///      cmp     rbx, rdx
 ///      jne     .LBB130_49
 /// [Reference](https://www.reidatcheson.com/matrix%20multiplication/rust/iterators/2021/02/26/gemm-iterators.html)
+///  N.B. LLVM node generate optimized code for native ndarray iterators
+///  so we should convert them to native rust slices.
 pub fn loop_interchange_iterators(
     a: &Array2<f64>,
     b: &Array2<f64>,
@@ -27,6 +30,13 @@ pub fn loop_interchange_iterators(
     a_shape: (usize, usize),
     b_shape: (usize, usize),
 ) {
+    // for (mut ci, ai) in c.axis_iter_mut(Axis(0)).zip(a.axis_iter(Axis(0))) {
+    //     for (aik, bk) in ai.iter().zip(b.axis_iter(Axis(0))) {
+    //         for (cij, bkj) in ci.iter_mut().zip(bk.iter()) {
+    //             *cij += (*aik) * (*bkj);
+    //         }
+    //     }
+    // }
     let a_slice = a.as_slice().unwrap();
     let b_slice = b.as_slice().unwrap();
     let c_slice = c.as_slice_mut().unwrap();
